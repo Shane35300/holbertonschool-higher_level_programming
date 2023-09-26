@@ -10,7 +10,7 @@ else:
 if last_digit < 6 and last_digit != 0:
     comp5_6 = "and is less than 6 and not 0"
 elif last_digit > 5:
-    comp5_6 = "and is greater than 5 and not 0"
+    comp5_6 = "and is greater than 5"
 else:
     comp5_6 = "and is 0"
 
