@@ -14,4 +14,4 @@ elif last_digit > 5:
 else:
     comp5_6 = "and is 0"
 
-print(f"Last digit of {number} is {last_digit} {comp5_6}")
+print("Last digit of {} is {} {}".format(number, last_digit, comp5_6))
