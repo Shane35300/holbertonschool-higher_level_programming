@@ -5,5 +5,5 @@ if __name__ == "__main__":
     print("{} ".format(nb), end="")
     print("arguments" if nb != 1 else "argument", end="")
     print(":" if nb != 0 else ".")
-    for i in range(0,nb):
+    for i in range(0, nb):
         print("{}: {}".format(i + 1, sys.argv[i + 1]))
