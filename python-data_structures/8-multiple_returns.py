@@ -4,4 +4,3 @@ def multiple_returns(sentence):
     if len(sentence) > 0:
         first_car = sentence[0]
     return (len(sentence), first_car)
-
