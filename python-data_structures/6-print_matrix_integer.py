@@ -7,4 +7,4 @@ def print_matrix_integer(matrix=[[]]):
                 print("{}".format(" "), end="")
             print("{}".format(elem), end="")
             i = 1
-        print()
+        print("{}".format("\n"), end="")
