@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-# ceci est une class
-"""
-
-
 class Square:
 
     """
