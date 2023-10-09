@@ -7,7 +7,9 @@
 class Square:
 
     """
-    definition de la class
+    Cette classe représente un carré.
+
+    Il n'a pas encore d'attributs ou de méthodes spécifiques.
     """
 
     pass
