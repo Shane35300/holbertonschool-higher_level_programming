@@ -1,3 +1,13 @@
 #!/usr/bin/python3
-class Square:  # name of the class
+"""
+# ceci est une class
+"""
+
+
+class Square:
+
+    """
+    definition de la class
+    """
+
     pass
