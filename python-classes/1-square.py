@@ -8,8 +8,6 @@ class Square:
 
     """
     Cette classe représente un carré.
-
-    Il n'a pas encore d'attributs ou de méthodes spécifiques.
     """
-
-    pass
+    def __init__(self, size):
+        self.__size = size  # Attribut d'instance privé
