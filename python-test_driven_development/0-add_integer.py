@@ -12,7 +12,7 @@ def add_integer(a, b=98):
     :return: The sum of a and b as an integer."""
     if not (isinstance(a, int) or isinstance(a, float)):
         raise TypeError("a must be an integer")
-    if not (isinstance(b, int) or isinstance(b, float)):
+    elif not (isinstance(b, int) or isinstance(b, float)):
         raise TypeError("b must be an integer")
     var_a = int(a)
     var_b = int(b)
