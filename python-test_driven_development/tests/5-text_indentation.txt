@@ -17,3 +17,7 @@ Function that print a text
 >>> text_indentation(12)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string

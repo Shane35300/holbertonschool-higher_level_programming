@@ -12,6 +12,8 @@ def text_indentation(text):
     text is the text that I print
     separators = ".", ":", "?"
     """
+    if text is None:
+        raise TypeError("text must be a string")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for i in range(len(text)):
