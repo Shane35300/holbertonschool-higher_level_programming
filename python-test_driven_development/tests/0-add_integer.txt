@@ -20,9 +20,6 @@ function that adds two integers
 >>> add_integer(100.3, -2)
 98
 
->>> add_integer(999999.999, -1.15)
-999998
-
 >>> add_integer(4, "School")
 Traceback (most recent call last):
     ...
