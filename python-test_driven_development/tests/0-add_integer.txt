@@ -29,3 +29,46 @@ TypeError: b must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, 5.9)
+0
+
+>>> add_integer(0.5, 0.5)
+0
+
+>>> add_integer(0.9999, 0.0001)
+0
+
+>>> add_integer(-1, 0)
+-1
+
+>>> add_integer(0, 1.1)
+1
+
+>>> add_integer(0.5, -0.5)
+0
+
+>>> add_integer(2.5, -2.5)
+0
+
+>>> add_integer(-2.5, -2.5)
+-4
+
+>>> add_integer(0, "123")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+
+>>> add_integer(1.5, None)
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> add_integer("hello", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
