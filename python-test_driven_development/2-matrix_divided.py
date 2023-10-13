@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
     :return: a new matrix where each element is divided by div"""
     if (matrix is None or len(matrix) == 0):
         raise TypeError("matrix must be a matrix (list of lists)" +
-                        "of integers/floats")
+                        " of integers/floats")
     length = len(matrix[0])
     for row in matrix:
         if len(row) != length:
@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
         for elem in row:
             if not (isinstance(elem, int) or isinstance(elem, float)):
                 raise TypeError("matrix must be a matrix (list of lists)" +
-                                "of integers/floats")
+                                " of integers/floats")
     if not (isinstance(div, int) or isinstance(div, float)):
         raise TypeError("div must be a number")
     if div == 0:
