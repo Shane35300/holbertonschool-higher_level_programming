@@ -16,9 +16,13 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    detector = 0
     for i in range(len(text)):
-        if text[i] == " " and text[i - 1] in ".:?":
+        if text[i] == " " and detector == 0:
             continue
-        print(text[i], end="")
+        else:
+            print(text[i], end="")
+            detector = 1
         if text[i] in ".:?":
             print("\n")
+            detector = 0
