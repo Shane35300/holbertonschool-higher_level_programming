@@ -9,5 +9,5 @@ def lookup(obj):
     """
     return a list object
     """
-
-    return dir(obj)
+    var = dir(obj)
+    return var
