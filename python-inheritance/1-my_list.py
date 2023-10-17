@@ -12,12 +12,9 @@ class MyList(list):
     inheriting its properties and methods.
     """
 
-
-
     def print_sorted(self):
         """
         This method sorts the elements in the list
         and prints the sorted list.
         """
-
         print(sorted(self))
