@@ -24,3 +24,7 @@ Function that print a liste in ascending order
 >>> print(sorted([1, 4, None, 3, 5]))
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+>>> print(sorted([1, 4, "hello", 3, 5]))
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'str' and 'int'
