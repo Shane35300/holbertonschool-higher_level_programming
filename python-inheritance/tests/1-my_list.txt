@@ -1,0 +1,26 @@
+>>> MyList = __import__('1-my_list').MyList
+
+Function that print a liste in ascending order
+
+>>> print(sorted([1, 4, 2, 3, 5]))
+[1, 2, 3, 4, 5]
+
+>>> print(sorted([-9, 4, -21, 3, 0]))
+[-21, -9, 0, 3, 4]
+
+>>> print(sorted([-9, 4, -21, 3, 0]))
+[-21, -9, 0, 3, 4]
+
+
+>>> print(sorted([-9.3, 4, -21.7, 3, 0]))
+[-21.7, -9.3, 0, 3, 4]
+
+>>> print(sorted([12]))
+[12]
+
+>>> print(sorted([]))
+[]
+
+>>> print(sorted([1, 4, None, 3, 5]))
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
