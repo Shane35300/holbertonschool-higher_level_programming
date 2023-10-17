@@ -12,15 +12,12 @@ class MyList(list):
     inheriting its properties and methods.
     """
 
-    def __init__(self, *args):
-        """
-        Initializes a MyList instance with the provided values.
-        """
-        super().__init__(args)
+
 
     def print_sorted(self):
         """
         This method sorts the elements in the list
         and prints the sorted list.
         """
+
         print(sorted(self))
