@@ -17,4 +17,7 @@ class MyList(list):
         This method sorts the elements in the list
         and prints the sorted list.
         """
+        for item in self:
+            if not isinstance(item, int):
+                raise TypeError('Not all elements in the list are integers')
         print(sorted(self))

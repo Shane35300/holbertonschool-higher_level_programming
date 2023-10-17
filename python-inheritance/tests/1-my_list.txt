@@ -2,29 +2,22 @@
 
 Function that print a liste in ascending order
 
->>> print(sorted([1, 4, 2, 3, 5]))
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
 
->>> print(sorted([-9, 4, -21, 3, 0]))
-[-21, -9, 0, 3, 4]
-
->>> print(sorted([-9, 4, -21, 3, 0]))
-[-21, -9, 0, 3, 4]
-
-
->>> print(sorted([-9.3, 4, -21.7, 3, 0]))
-[-21.7, -9.3, 0, 3, 4]
-
->>> print(sorted([12]))
-[12]
-
->>> print(sorted([]))
+>>> my_list = MyList()
+>>> my_list.print_sorted()
 []
 
->>> print(sorted([1, 4, None, 3, 5]))
+>>> my_list = MyList()
+>>> my_list.append('A')
+>>> my_list.append('Z')
+>>> my_list.print_sorted()
 Traceback (most recent call last):
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
-
->>> print(sorted([1, 4, "hello", 3, 5]))
-Traceback (most recent call last):
-TypeError: '<' not supported between instances of 'str' and 'int'
+TypeError: Not all elements in the list are integers
