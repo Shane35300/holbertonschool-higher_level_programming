@@ -6,6 +6,7 @@ BaseGeometry is a empty class
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """
     Cette classe représente un rectangle.
