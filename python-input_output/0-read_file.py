@@ -12,7 +12,7 @@ def read_file(filename=""):
     that this function has to print
     """
 
-    with open(filename,'r' , encoding="utf-8") as txt:
+    with open(filename, 'r', encoding="utf-8") as txt:
         text = txt.read()
     if text.endswith('\n'):
         text = text[:-1]
