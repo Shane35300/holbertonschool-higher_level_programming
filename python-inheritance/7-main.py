@@ -22,6 +22,6 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
-    bg.integer_validator("distance", 5.3)
+    bg.integer_validator("hello", True)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
