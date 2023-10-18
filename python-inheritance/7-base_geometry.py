@@ -19,9 +19,9 @@ class BaseGeometry():
             raise TypeError("{} must be an integer".format(name))
         if name is None:
             raise TypeError("{} must be an integer".format(name))
-        if not isinstance(value, int) and not isinstance(value, float):
+        if not type(value) is int and not type(value) is float:
             raise TypeError("{} must be an integer".format(name))
-        if isinstance(value, float):
+        if type(value) is float:
             value = int(value)
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
