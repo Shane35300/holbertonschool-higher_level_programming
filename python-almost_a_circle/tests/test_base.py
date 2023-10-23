@@ -2,6 +2,8 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from unittest.mock import patch
+from io import StringIO
 
 class TestBase(unittest.TestCase):
     def setUp(self):
@@ -89,5 +91,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r4.area(), 6)
         self.assertEqual(r5.area(), 20)
         self.assertEqual(r6.area(), 56)
+
+    def test_display(self):
+        r7 = Rectangle(3, 2)
+        r8 = Rectangle(2, 2)
+        expected_output7 = "###\n###\n"
+        expected_output8 = "##\n##\n"
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r7.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output7)
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r8.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output8)
+
 if __name__ == '__main__':
     unittest.main()
