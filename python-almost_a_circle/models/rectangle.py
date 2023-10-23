@@ -137,21 +137,33 @@ class Rectangle(Base):
                 .format(self.id, self.__x, self.__y,
                         self.__width, self.__height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         This method is is used to modify instance attributes according
         to a list of arguments
         """
-        count = 0
-        for arg in args:
-            count += 1
-        if count > 0:
-            self.id = args[0]
-        if count > 1:
-            self.width = args[1]
-        if count > 2:
-            self.height = args[2]
-        if count > 3:
-            self.x = args[3]
-        if count > 4:
-            self.y = args[4]
+        if args:
+            count = 0
+            for arg in args:
+                count += 1
+            if count > 0:
+                self.id = args[0]
+            if count > 1:
+                self.width = args[1]
+            if count > 2:
+                self.height = args[2]
+            if count > 3:
+                self.x = args[3]
+            if count > 4:
+                self.y = args[4]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
