@@ -2,6 +2,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 from unittest.mock import patch
 from io import StringIO
 
@@ -158,6 +159,46 @@ class TestRectangle(unittest.TestCase):
         r14.update(x=1, height=2, y=3, width=4)
         self.assertEqual(r14.__str__(), "[Rectangle] (89) 1/3 - 4/2")
 
+class TestSquare(unittest.TestCase):
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def test_id_assignment(self):
+        # Créez une instance de la classe Base
+        instance1 = Square(5)
+        instance2 = Square(5, 0, 0, 9)
+        instance3 = Square(7, 5, 3)
+
+        # Vérifiez si les identifiants sont attribués correctement
+        self.assertEqual(instance1.id, 1)
+        self.assertEqual(instance2.id, 9)
+        self.assertEqual(instance3.id, 2)
+
+    def test_display_2(self):
+        s1 = Square(2)
+        s2 = Square(3, 1, 1)
+        expected_output1 = "##\n##\n"
+        expected_output2 = "\n ###\n ###\n ###\n"
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            s1.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output1)
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            s2.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output2)
+    def test_str_method3(self):
+        # Test if that model is respected:
+        # [Square] (<id>) <x>/<y> - <size>
+        Base._Base__nb_objects = 0
+        s3 = Square(5)
+        s4 = Square(2, 2)
+        s5 = Square(3, 1, 3)
+        self.assertEqual(s3.__str__(), "[Square] (1) 0/0 - 5")
+        self.assertEqual(s4.__str__(), "[Square] (2) 2/0 - 2")
+        self.assertEqual(s5.__str__(), "[Square] (3) 1/3 - 3")
 
 if __name__ == '__main__':
     unittest.main()
