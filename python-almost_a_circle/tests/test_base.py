@@ -108,5 +108,14 @@ class TestRectangle(unittest.TestCase):
             actual_output = mock_stdout.getvalue()
         self.assertEqual(actual_output, expected_output8)
 
+    def test_str_method(self):
+        # Test if that model is respected:
+        # [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        Base._Base__nb_objects = 0
+        r9 = Rectangle(4, 6, 2, 1, 12)
+        r10 = Rectangle(5, 5, 1)
+        self.assertEqual(r9.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+        self.assertEqual(r10.__str__(), "[Rectangle] (1) 1/0 - 5/5")
+
 if __name__ == '__main__':
     unittest.main()
