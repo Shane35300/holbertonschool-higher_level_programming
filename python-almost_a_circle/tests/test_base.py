@@ -41,6 +41,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(-5, 5)
 
+    def test_zero_value_width(self):
+        # Test d'une largeur égale à zéro (doit lever une exception ValueError)
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 6)
+
     def test_invalid_height(self):
         # Test d'une hauteur invalide (doit lever une exception TypeError)
         with self.assertRaises(TypeError):
@@ -50,6 +55,11 @@ class TestRectangle(unittest.TestCase):
         # Test d'une hauteur négative (doit lever une exception ValueError)
         with self.assertRaises(ValueError):
             r = Rectangle(5, -5)
+
+    def test_zero_value_width(self):
+        # Test d'une hauteur égale à zéro (doit lever une exception ValueError)
+        with self.assertRaises(ValueError):
+            r = Rectangle(4, 0)
 
     def test_invalid_x(self):
         # Test d'une position X invalide (doit lever une exception TypeError)
