@@ -7,6 +7,7 @@ for width, height, X position, and Y position.
 """
 
 
+import json
 from models.base import Base
 
 
@@ -169,14 +170,9 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """
-        This method returns the dictionary
-        representation of a Rectangle instance
-        """
+        dico = self.__dict__
+        return json.dumps(dico)
 
-        dico = {}
-        for key, value in self.__dict__.items():
-            if key.startswith("_Rectangle"):
-                key = key[12:]
-            dico[key] = value
-        return dico
+r1 = Rectangle(10, 2, 1, 9)
+a = r1.to_dictionary()
+print(a)
