@@ -65,3 +65,20 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """
+        This method returns the dictionary
+        representation of a Square instance
+        """
+
+        dico = {}
+        for key, value in self.__dict__.items():
+            if "height" in key or "width" in key:
+                continue
+            elif key.startswith("_Rectangle"):
+                key = key[12:]
+            elif key.startswith("_Square"):
+                key = key[9:]
+            dico[key] = value
+        return dico
