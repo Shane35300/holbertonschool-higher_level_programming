@@ -133,5 +133,20 @@ class TestRectangle(unittest.TestCase):
             actual_output = mock_stdout.getvalue()
         self.assertEqual(actual_output, expected_output12)
 
+    def test_update(self):
+        r13 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(r13.__str__(), "[Rectangle] (1) 10/10 - 10/10")
+        r13.update(89)
+        self.assertEqual(r13.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+        r13.update(89, 2)
+        self.assertEqual(r13.__str__(), "[Rectangle] (89) 10/10 - 2/10")
+        r13.update(89, 2, 3)
+        self.assertEqual(r13.__str__(), "[Rectangle] (89) 10/10 - 2/3")
+        r13.update(89, 2, 3, 4)
+        self.assertEqual(r13.__str__(), "[Rectangle] (89) 4/10 - 2/3")
+        r13.update(89, 2, 3, 4, 5)
+        self.assertEqual(r13.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+
+
 if __name__ == '__main__':
     unittest.main()

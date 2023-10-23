@@ -136,3 +136,22 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.__x, self.__y,
                         self.__width, self.__height))
+
+    def update(self, *args):
+        """
+        This method is is used to modify instance attributes according
+        to a list of arguments
+        """
+        count = 0
+        for arg in args:
+            count += 1
+        if count > 0:
+            self.id = args[0]
+        if count > 1:
+            self.width = args[1]
+        if count > 2:
+            self.height = args[2]
+        if count > 3:
+            self.x = args[3]
+        if count > 4:
+            self.y = args[4]
