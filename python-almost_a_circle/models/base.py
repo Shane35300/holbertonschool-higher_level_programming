@@ -7,6 +7,9 @@ un identifiant unique à chaque instance créée.
 """
 
 
+import json
+
+
 class Base():
     """
     Initialisation de la variable de classe
@@ -19,3 +22,14 @@ class Base():
             Base.__nb_objects += 1
             id = Base.__nb_objects
         self.id = id
+
+    def to_json_string(list_dictionaries):
+        """
+        this function returns a json string representation of
+        list dictionnaries
+        """
+
+        string = ""
+        if list_dictionaries is not None:
+            string += json.dumps(list_dictionaries)
+        return string
