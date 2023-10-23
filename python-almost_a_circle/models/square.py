@@ -14,7 +14,7 @@ class Square(Rectangle):
     This fonction define a square
     with size, and its position with x and y
     """
-    
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.__size = self.width
