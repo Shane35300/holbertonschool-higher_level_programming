@@ -108,5 +108,5 @@ class Rectangle(Base):
         This method returns the area value of
         a Rectangle instance
         """
-        
+
         return self.__width * self.__height
