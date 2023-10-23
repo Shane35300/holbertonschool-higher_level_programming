@@ -116,10 +116,16 @@ class Rectangle(Base):
         This method print in the standard output the representation
         of a Rectangle instance with the caracter '#'
         """
+        string = ""
+        for k in range(self.__y):
+            string += "\n"
         for i in range(self.__height):
+            for l in range(self.__x):
+                string += " "
             for j in range(self.__width):
-                print("#", end="")
-            print()
+                string += "#"
+            string += "\n"
+        print(string, end="")
 
     def __str__(self):
         """

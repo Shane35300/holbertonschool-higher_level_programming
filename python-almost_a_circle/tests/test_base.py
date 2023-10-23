@@ -117,5 +117,21 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r9.__str__(), "[Rectangle] (12) 2/1 - 4/6")
         self.assertEqual(r10.__str__(), "[Rectangle] (1) 1/0 - 5/5")
 
+    def test_display_2(self):
+        r11 = Rectangle(2, 3, 2, 2)
+        r12 = Rectangle(3, 2, 1, 0)
+        expected_output11 = "\n\n  ##\n  ##\n  ##\n"
+        expected_output12 = " ###\n ###\n"
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r11.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output11)
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            r12.display()
+            actual_output = mock_stdout.getvalue()
+        self.assertEqual(actual_output, expected_output12)
+
 if __name__ == '__main__':
     unittest.main()
