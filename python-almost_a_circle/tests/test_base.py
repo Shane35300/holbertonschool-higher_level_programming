@@ -200,5 +200,20 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s4.__str__(), "[Square] (2) 2/0 - 2")
         self.assertEqual(s5.__str__(), "[Square] (3) 1/3 - 3")
 
+    def test_invalid_size(self):
+        # Test d'une taille invalide (doit lever une exception TypeError)
+        with self.assertRaises(TypeError):
+            s = Square("invalid")
+
+    def test_negative_size(self):
+        # Test d'une taille négative (doit lever une exception ValueError)
+        with self.assertRaises(ValueError):
+            s = Square(-5)
+
+    def test_zero_value_size(self):
+        # Test d'une taille égale à zéro (doit lever une exception ValueError)
+        with self.assertRaises(ValueError):
+            s = Square(0)
+
 if __name__ == '__main__':
     unittest.main()
