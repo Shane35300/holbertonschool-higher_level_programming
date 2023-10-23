@@ -38,3 +38,30 @@ class Square(Rectangle):
         return ("[Square] ({}) {}/{} - {}"
                 .format(self.id, self.x, self.y,
                         self.size))
+
+    def update(self, *args, **kwargs):
+        """
+        This method is is used to modify instance attributes according
+        to a list of arguments
+        """
+        if args:
+            count = 0
+            for arg in args:
+                count += 1
+            if count > 0:
+                self.id = args[0]
+            if count > 1:
+                self.size = args[1]
+            if count > 2:
+                self.x = args[2]
+            if count > 3:
+                self.y = args[3]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
