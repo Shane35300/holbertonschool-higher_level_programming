@@ -68,6 +68,32 @@ class Base():
         """
         returns an instance with all attributes already set
         """
+
         rect = cls(3, 4)
         rect.update(**dictionary)
         return rect
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Load instances from a JSON file.
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, 'r', encoding="utf-8") as txt:
+                json_str = txt.read()
+                list_dicts = cls.from_json_string(json_str)
+            instances = []
+            for data in list_dicts:
+                dico = {}
+                for key, value in data.items():
+                    if key.startswith("_Rectangle"):
+                        key = key[12:]
+                    if key.startswith("_Square"):
+                        key = key[9:]
+                    dico[key] = value
+                instance = cls.create(**dico)
+                instances.append(instance)
+            return instances
+        except FileNotFoundError:
+            return []

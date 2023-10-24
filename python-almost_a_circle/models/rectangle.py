@@ -167,6 +167,10 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+            if "_Square__size" in kwargs:
+                self.size = kwargs["_Square__size"]
+                self.width = kwargs["_Square__size"]
+                self.height = kwargs["_Square__size"]
 
     def to_dictionary(self):
         """
