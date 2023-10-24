@@ -52,3 +52,14 @@ class Base():
 
         with open(filename, 'w') as txt:
             txt.write(cls.to_json_string(list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Return the list of dictionaries represented by json_string.
+        """
+
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
