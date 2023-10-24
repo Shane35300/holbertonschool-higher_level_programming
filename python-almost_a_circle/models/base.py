@@ -49,9 +49,11 @@ class Base():
         if list_objs is not None:
             for obj in list_objs:
                 list.append(obj.__dict__)
-
-        with open(filename, 'w') as txt:
-            txt.write(cls.to_json_string(list))
+            with open(filename, 'w') as txt:
+                txt.write(cls.to_json_string(list))
+        else:
+            with open(filename, 'w') as txt:
+                txt.write(list)
 
     @staticmethod
     def from_json_string(json_string):
