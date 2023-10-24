@@ -50,5 +50,5 @@ class Base():
             for obj in list_objs:
                 list.append(obj.__dict__)
 
-        with open(filename, 'w', encoding="utf-8") as txt:
+        with open(filename, 'w') as txt:
             txt.write(cls.to_json_string(list))
