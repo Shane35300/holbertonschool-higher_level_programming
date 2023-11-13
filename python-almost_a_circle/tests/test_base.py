@@ -21,6 +21,26 @@ class TestBase(unittest.TestCase):
         self.assertEqual(instance2.id, 2)
         self.assertEqual(instance3.id, 12)
 
+    def test_to_json_string(self):
+        # Testez la méthode to_json_string avec différents dictionnaires en entrée
+        dict1 = {"key1": "value1", "key2": "value2"}
+        dict2 = {"key3": "value3", "key4": "value4"}
+        self.assertEqual(Base.to_json_string([dict1, dict2]), '[{"key1": "value1", "key2": "value2"}, {"key3": "value3", "key4": "value4"}]')
+        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_save_to_file(self):
+        # Testez la méthode save_to_file avec différentes listes d'objets en entrée
+        r1 = Rectangle(10, 5)
+        r2 = Rectangle(8, 4)
+        s1 = Square(6)
+        s2 = Square(7)
+        Rectangle.save_to_file([r1, r2])
+        Square.save_to_file([s1, s2])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[{"id": 1, "width": 10, "height": 5, "x": 0, "y": 0}, {"id": 2, "width": 8, "height": 4, "x": 0, "y": 0}]')
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[{"id": 1, "size": 6, "x": 0, "y": 0}, {"id": 2, "size": 7, "x": 0, "y": 0}]')
+
 class TestRectangle(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
@@ -159,6 +179,18 @@ class TestRectangle(unittest.TestCase):
         r14.update(x=1, height=2, y=3, width=4)
         self.assertEqual(r14.__str__(), "[Rectangle] (89) 1/3 - 4/2")
 
+    def test_area(self):
+        # Testez la méthode area avec différents rectangles de tailles variées
+        r1 = Rectangle(5, 10)
+        r2 = Rectangle(8, 4)
+        self.assertEqual(r1.area(), 50)
+        self.assertEqual(r2.area(), 32)
+
+    def test_to_dictionary(self):
+        # Testez la méthode to_dictionary pour obtenir un dictionnaire représentant un rectangle
+        r1 = Rectangle(5, 10, 2, 3)
+        self.assertEqual(r1.to_dictionary(), {'id': 1, 'width': 5, 'height': 10, 'x': 2, 'y': 3})
+
 class TestSquare(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
@@ -189,6 +221,7 @@ class TestSquare(unittest.TestCase):
             s2.display()
             actual_output = mock_stdout.getvalue()
         self.assertEqual(actual_output, expected_output2)
+
     def test_str_method3(self):
         # Test if that model is respected:
         # [Square] (<id>) <x>/<y> - <size>
@@ -232,6 +265,18 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.__str__(), "[Square] (1) 12/1 - 7")
         s1.update(size=7, id=89, y=1)
         self.assertEqual(s1.__str__(), "[Square] (89) 12/1 - 7")
+
+    def test_area(self):
+        # Testez la méthode area avec différents carrés de tailles variées
+        s1 = Square(5)
+        s2 = Square(8)
+        self.assertEqual(s1.area(), 25)
+        self.assertEqual(s2.area(), 64)
+
+    def test_to_dictionary(self):
+        # Testez la méthode to_dictionary pour obtenir un dictionnaire représentant un carré
+        s1 = Square(5, 2, 3)
+        self.assertEqual(s1.to_dictionary(), {'id': 1, 'size': 5, 'x': 2, 'y': 3})
 
 if __name__ == '__main__':
     unittest.main()
