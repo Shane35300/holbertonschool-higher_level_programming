@@ -1,8 +1,38 @@
 #!/usr/bin/python3
+"""
+This script connects to a MySQL server and retrieves
+rows from the 'states' table based on a given condition.
+"""
+
+
 import MySQLdb
 import sys
 
+"""
+    This script connects to a MySQL server and
+    retrieves rows from the 'states' table based on a given condition.
+
+    Usage: ./script.py <username> <password> <database> <state_name>
+
+    Args:
+        - <username>: MySQL username
+        - <password>: MySQL password
+        - <database>: MySQL database name
+        - <state_name>: Name of the state to search for in the 'states' table
+
+    Example:
+        ./script.py root root hbtn_0e_0_usa California
+"""
+
+
 if __name__ == "__main__":
+    """
+    Args:
+        - <username>: MySQL username
+        - <password>: MySQL password
+        - <database>: MySQL database name
+        - <state_name>: Name of the state to search for in the 'states' table
+    """
     if len(sys.argv) != 5:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
