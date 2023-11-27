@@ -13,7 +13,7 @@ Base = declarative_base()
 class State(Base):
     """
     State class representing the
-      'state' table in the database.
+    'state' table in the database.
     """
 
     __tablename__ = 'states'
