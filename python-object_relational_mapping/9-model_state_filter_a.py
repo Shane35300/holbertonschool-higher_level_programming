@@ -27,11 +27,8 @@ if __name__ == "__main__":
         .order_by(State.id)
         .all()
     )
-    if result:
-        for line in result:
-            print("{}: {}".format(line.id, line.name))
-    else:
-        print("Nothing")
+    for line in result:
+        print("{}: {}".format(line.id, line.name))
 
     # Close the session
     session.close()
