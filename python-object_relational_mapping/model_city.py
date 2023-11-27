@@ -12,7 +12,7 @@ from model_state import State, Base
 class City(Base):
     """
     City class representing the
-      'cities' table in the database.
+    'cities' table in the database.
     """
 
     __tablename__ = 'cities'
