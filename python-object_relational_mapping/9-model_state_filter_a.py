@@ -21,7 +21,12 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects and print the results
-    result = session.query(State).filter(State.name.like('%a%')).all()
+    result = (
+        session.query(State)
+        .filter(State.name.like('%a%'))
+        .order_by(State.id)
+        .all()
+    )
     if result:
         for line in result:
             print("{}: {}".format(line.id, line.name))
