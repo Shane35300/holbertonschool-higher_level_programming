@@ -21,13 +21,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects and print the results
-    states = session.query(State).order_by(State.id).all()
-    trap = 0
-    for state in states:
-        trap += 1
-        if trap == 1:
-            print("{}: {}".format(state.id, state.name))
-    if trap == 0:
+    first_state = session.query(State).order_by(State.id).first()
+    if first_state:
+        print("{}: {}".format(first_state.id, first_state.name))
+    else:
         print("Nothing")
 
     # Close the session
