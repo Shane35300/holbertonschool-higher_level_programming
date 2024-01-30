@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((error) => {
       const newText = document.createTextNode(error.message);
+      hello.appendChild(newText);
     });
-
-  hello.appendChild(newText);
 });
