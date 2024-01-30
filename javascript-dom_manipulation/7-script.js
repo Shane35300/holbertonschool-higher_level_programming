@@ -1,4 +1,4 @@
-const liste = document.querySelector('ul');
+const liste = document.querySelector('#list_movies');
 
 fetch('https://swapi-api.hbtn.io/api/films/?format=json')
   .then((response) => {
