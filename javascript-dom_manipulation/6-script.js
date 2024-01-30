@@ -8,8 +8,7 @@ fetch('https://swapi-api.hbtn.io/api/people/5/?format=json')
     return response.json(); // Traiter la réponse JSON ici
   })
   .then((data) => {
-    const newText = JSON.stringify(data.name);
-    const name = newText.substring(1, newText.length - 1);
+    const { name } = data;
     const result = document.createTextNode(name);
     character.appendChild(result);
   })

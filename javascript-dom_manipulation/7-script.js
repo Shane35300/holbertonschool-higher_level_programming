@@ -8,19 +8,19 @@ fetch('https://swapi-api.hbtn.io/api/films/?format=json')
     return response.json(); // Traiter la réponse JSON ici
   })
   .then((data) => {
-    const results = data.results;
-	for (let movie of results) {
-		const title = movie.title;
+    const { results } = data;
+    for (const movie of results) {
+      const { title } = movie;
 
-		const newLi = document.createElement('li');
-  		const newText = document.createTextNode(title);
-  		newLi.appendChild(newText);
-  		liste.appendChild(newLi);
-	}
+      const newLi = document.createElement('li');
+      const newText = document.createTextNode(title);
+      newLi.appendChild(newText);
+      liste.appendChild(newLi);
+    }
   })
   .catch((error) => {
-	const newLi = document.createElement('li');
+    const newLi = document.createElement('li');
     const newText = document.createTextNode(error.message);
     newLi.appendChild(newText);
-  	liste.appendChild(newLi);
+    liste.appendChild(newLi);
   });
